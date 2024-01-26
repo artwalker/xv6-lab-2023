@@ -99,11 +99,21 @@ int
 atoi(const char *s)
 {
   int n;
-
+  int sign;
+  sign = 1;
   n = 0;
+
+  // Check for negative sign
+  if (*s == '-') {
+    sign = -1;
+    s++; // Skip the negative sign
+  }
+
+  // Prcocess the digits
   while('0' <= *s && *s <= '9')
     n = n*10 + *s++ - '0';
-  return n;
+
+  return sign * n;
 }
 
 void*
