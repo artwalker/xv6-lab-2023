@@ -3,7 +3,8 @@
 #include "kernel/fcntl.h"
 #include "kernel/param.h"
 
-void xargs(int n, int argc, char *argv[])
+void 
+xargs(int n, int argc, char *argv[])
 {
     int i;
     char c, *line;
@@ -76,7 +77,8 @@ void xargs(int n, int argc, char *argv[])
     free(line); // free the line buffer
 }
 
-int main(int argc, char *argv[])
+int 
+main(int argc, char *argv[])
 {
     int n = 1; // default value for -n option
     int i;
