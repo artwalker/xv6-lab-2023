@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "fs.h": "c",
-        "fcntl.h": "c"
+        "fcntl.h": "c",
+        "typeinfo": "c"
     }
 }
