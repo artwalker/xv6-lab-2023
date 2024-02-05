@@ -1,25 +1,47 @@
-# Lab: Xv6 and Unix Utilities
+xv6 is a re-implementation of Dennis Ritchie's and Ken Thompson's Unix
+Version 6 (v6).  xv6 loosely follows the structure and style of v6,
+but is implemented for a modern RISC-V multiprocessor using ANSI C.
 
-## Assignment:
-- [x] sleep (easy)
-- [x] pingpong (easy)
-- [x] primes (moderate)/(hard)
-- [x] find (moderate)
-- [x] xargs (moderate)
+ACKNOWLEDGMENTS
 
-## Optional Challenge Exercises
-- [x] uptime (easy)
-- [x] support regular expressions in name matching for find (easy)
-- [x] modify the shell to not print a $ when processing shell commands from a file (moderate)
+xv6 is inspired by John Lions's Commentary on UNIX 6th Edition (Peer
+to Peer Communications; ISBN: 1-57398-013-7; 1st edition (June 14,
+2000)).  See also https://pdos.csail.mit.edu/6.828/, which provides
+pointers to on-line resources for v6.
 
-## To Do List
-- [ ] modify the shell to support wait (easy)
-- [ ] modify the shell to support lists of commands, separated by ";" (moderate)
-- [ ] modify the shell to support sub-shells by implementing "(" and ")" (moderate)
-- [ ] modify the shell to support tab completion (easy)
-- [ ] modify the shell to keep a history of passed shell commands (moderate)
+The following people have made contributions: Russ Cox (context switching,
+locking), Cliff Frey (MP), Xiao Yu (MP), Nickolai Zeldovich, and Austin
+Clements.
 
-> Welcome you discussing the labs, talking about the labs, talking about how to design the lab solutions\
-> Please **do not look at** other people's solutions for the labs\
-> Please all the code you write should be your own and you shouldn't share code or look at other solutions\
-> The grading for the course will be mostly determined.
+We are also grateful for the bug reports and patches contributed by
+Takahiro Aoyagi, Silas Boyd-Wickizer, Anton Burtsev, Ian Chen, Dan
+Cross, Cody Cutler, Mike CAT, Tej Chajed, Asami Doi, eyalz800, Nelson
+Elhage, Saar Ettinger, Alice Ferrazzi, Nathaniel Filardo, flespark,
+Peter Froehlich, Yakir Goaron, Shivam Handa, Matt Harvey, Bryan Henry,
+jaichenhengjie, Jim Huang, Matúš Jókay, Alexander Kapshuk, Anders
+Kaseorg, kehao95, Wolfgang Keller, Jungwoo Kim, Jonathan Kimmitt,
+Eddie Kohler, Vadim Kolontsov, Austin Liew, l0stman, Pavan
+Maddamsetti, Imbar Marinescu, Yandong Mao, Matan Shabtay, Hitoshi
+Mitake, Carmi Merimovich, Mark Morrissey, mtasm, Joel Nider,
+OptimisticSide, Greg Price, Jude Rich, Ayan Shafqat, Eldar Sehayek,
+Yongming Shen, Fumiya Shigemitsu, Cam Tenny, tyfkda, Warren Toomey,
+Stephen Tu, Rafael Ubal, Amane Uehara, Pablo Ventura, Xi Wang, Keiichi
+Watanabe, Nicolas Wolovick, wxdao, Grant Wu, Jindong Zhang, Icenowy
+Zheng, ZhUyU1997, and Zou Chang Wei.
+
+The code in the files that constitute xv6 is
+Copyright 2006-2020 Frans Kaashoek, Robert Morris, and Russ Cox.
+
+ERROR REPORTS
+
+Please send errors and suggestions to Frans Kaashoek and Robert Morris
+(kaashoek,rtm@mit.edu).  The main purpose of xv6 is as a teaching
+operating system for MIT's 6.S081, so we are more interested in
+simplifications and clarifications than new features.
+
+BUILDING AND RUNNING XV6
+
+You will need a RISC-V "newlib" tool chain from
+https://github.com/riscv/riscv-gnu-toolchain, and qemu compiled for
+riscv64-softmmu.  Once they are installed, and in your shell
+search path, you can run "make qemu".
