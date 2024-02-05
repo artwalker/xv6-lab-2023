@@ -3,6 +3,7 @@
 #include "kernel/types.h"
 #include "user/user.h"
 #include "kernel/fcntl.h"
+#include "kernel/stat.h"
 
 // Parsed command representation
 #define EXEC  1
@@ -12,6 +13,8 @@
 #define BACK  5
 
 #define MAXARGS 10
+
+#define STDIN_FILENO 0
 
 struct cmd {
   int type;
@@ -131,10 +134,24 @@ runcmd(struct cmd *cmd)
   exit(0);
 }
 
+int 
+isatty(int fd)
+{
+  struct stat st;
+  if (fstat(fd, &st) < 0)
+  {
+    return 0;
+  }
+  return st.type == T_DEVICE;
+}
+
 int
 getcmd(char *buf, int nbuf)
 {
-  write(2, "$ ", 2);
+  if (isatty(STDIN_FILENO))
+  {
+    write(2, "$ ", 2);
+  }
   memset(buf, 0, nbuf);
   gets(buf, nbuf);
   if(buf[0] == 0) // EOF
