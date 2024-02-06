@@ -19,6 +19,12 @@
 - [ ] modify the shell to support tab completion (easy)
 - [ ] modify the shell to keep a history of passed shell commands (moderate)
 
+## Resulting
+### Before modification of printing $ in shell
+![WithoutDollor](./WithoutDollor.gif)
+### After modification of printing $ in shell
+![WithDollor](./WithDollor.gif)
+
 > Welcome you discussing the labs, talking about the labs, talking about how to design the lab solutions\
 > Please **do not look at** other people's solutions for the labs\
 > Please all the code you write should be your own and you shouldn't share code or look at other solutions\
